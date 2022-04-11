@@ -55,11 +55,10 @@ curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/relea
 mkdir -p /opt/microsoft/powershell/7
 tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7
 chmod 777 -R /opt/microsoft
-ln 
 
 # user preferences
 touch /etc/sudoers.d/user
-echo "user ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/user
+echo "user ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/user
 chmod 440 /etc/sudoers.d/user
 mkdir /home/user/Projects
 chown user:user -R /home/user/Projects
